@@ -12,4 +12,16 @@ class MyTournamentParser(MyTournamentParserBase):
     def parse(self, fp_tournament: str) -> tournament_models.Tournament:
         
         df = pd.read_excel(fp_tournament)
-        print(df)
+        game_l = []
+        for i, row in df.iterrows():
+
+            game = tournament_models.Game(start=row["Start"],
+                                          category=row["Category"],
+                                          playing_field=row["Playing field"],
+                                          team_1=row["Team 1"],
+                                          team_2=row["Team 2"])
+            game_l.append(game)
+
+        tournament = tournament_models.Tournament(games=game_l)
+
+        return tournament

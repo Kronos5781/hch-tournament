@@ -30,7 +30,8 @@ RUN pip3 install \
     requests==2.32.3 \
     bs4==0.0.2 \
     colorlog==6.9.0 \
-    pandas==2.2.3
+    pandas==2.2.3 \
+    openpyxl==3.1.5
 
 ### KRONOS USER AND ROOT PASSWD###
 RUN useradd -ms /bin/bash kronos && \

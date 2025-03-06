@@ -2,4 +2,4 @@
 hchtournament.egg-info
 
 # filetpyes
-.pyc
+*.pyc
