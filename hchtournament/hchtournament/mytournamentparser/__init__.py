@@ -1,1 +1,1 @@
-from my_tournament_parser import MyTournamentParser
+from .my_tournament_parser import MyTournamentParser

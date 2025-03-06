@@ -7,13 +7,11 @@
     },
     "remoteUser": "kronos",
     "runArgs": [
-        "--name=hvw_scraper_dev_container",
+        "--name=hch_tournament_dev_container",
         "--network=host",
         "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
         "--volume=/dev:/dev",
-        "--privileged",
-        "--env-file",
-        ".env/env.env"
+        "--privileged"
     ],
     "containerEnv": {
         "DISPLAY": "${localEnv:DISPLAY}"
