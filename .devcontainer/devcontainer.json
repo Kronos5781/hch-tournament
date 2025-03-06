@@ -1,0 +1,33 @@
+{
+    "dockerFile": "Dockerfile",
+    "build": {
+        "args": {
+            "WORKSPACE": "${containerWorkspaceFolder}"
+        }
+    },
+    "remoteUser": "kronos",
+    "runArgs": [
+        "--name=hvw_scraper_dev_container",
+        "--network=host",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+        "--volume=/dev:/dev",
+        "--privileged",
+        "--env-file",
+        ".env/env.env"
+    ],
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.autopep8",
+                "esbenp.prettier-vscode",
+                "github.copilot",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "postCreateCommand": "bash -c './devops_tools/post_create.sh'"
+}
