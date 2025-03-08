@@ -121,10 +121,10 @@ class TournamentAnalyzerBase:
             # print csv
             data = StringIO(csv_data)
             df = pd.read_csv(data, sep=";")
-            print("-" * 60)
+            print("-" * 100)
             print(f"Category: {category.name.upper()}")
             print(df)
-            print("-" * 60)
+            print("-" * 100)
 
             # write csv
             with open(f"data/{category.name}.csv", "w") as f:
